@@ -1,0 +1,69 @@
+// colors
+$color: #333333;
+$background-color: #FFFFFF;
+$primary-color: #272727;
+$orange-red: rgb(255, 123, 0);
+$theme-color: #8064a2;
+
+// font sizes and family
+$font-size: 16px;
+$font-family: "Calibri", sans-serif;
+
+// @function bold($val) {
+//     @return $val
+// }
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// screen sizes
+
+@mixin screen($screen-size) {
+    @if $screen-size == xxs {
+        // @media only screen and (max-width: 300px) {
+            @media only screen and (min-width: 0) {
+            @content;
+        }
+    }
+    
+    @else if $screen-size == xs {
+        @media only screen and (min-width: 360px) {
+            @content;
+        }
+    }
+    
+    @else if $screen-size == sm {
+        @media only screen and (min-width: 360px) {
+            @content;
+        }
+    }
+    
+    @else if $screen-size == md {
+        @media only screen and (min-width: 575px) {
+            @content;
+        }
+    }
+    
+    @else if $screen-size == lg {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    
+    @else if $screen-size == xl {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    }
+
+
+    @else if $screen-size == sx-md {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+}
